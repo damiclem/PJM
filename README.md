@@ -1,2 +1,2 @@
-# pmj
-Analysis and forecasting of energy cosnumption tracked by PMJ consortium 
+# PJM
+Analysis and forecasting of energy cosnumption tracked by PJM consortium 
