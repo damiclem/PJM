@@ -10,11 +10,9 @@ from torch.utils.data import Dataset, DataLoader
 class EnergyConsumptionNet(nn.Module):
     
     # Constructor
-    def __init__(self, input_size, hidden_size, num_layers, output_size=None, dropout=0, rnn=nn.LSTM):
+    def __init__(self, input_size, hidden_size, num_layers, dropout=0, rnn=nn.LSTM):
         # Call parent constructor
         super().__init__()
-        # Define output size
-        output_size = input_size if output_size is None else output_size
         # Define recurrent layer
         self.rnn = rnn(
             input_size = input_size,
@@ -24,7 +22,7 @@ class EnergyConsumptionNet(nn.Module):
             batch_first = True
         )
         # Define output layer
-        self.out = nn.Linear(hidden_size, output_size)
+        self.out = nn.Linear(hidden_size, 1)
         
     # Forward function
     def forward(self, x, state=None):

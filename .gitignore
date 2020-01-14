@@ -130,3 +130,6 @@ dmypy.json
 
 # Exclude data directory
 data/
+
+# Exclude images
+images/
